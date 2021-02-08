@@ -1,0 +1,5 @@
+action: Decompress
+from: b1.txt
+to: c1.txt
+buffer: 1000
+read_buffer: 55

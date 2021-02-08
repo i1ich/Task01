@@ -1,0 +1,5 @@
+action: Compress
+from: a1.txt
+to: b1.txt
+buffer: 1000
+read_buffer: 55
