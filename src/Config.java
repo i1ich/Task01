@@ -58,25 +58,7 @@ public class Config {
         this.data = new MyData("", "", Action.DEFAULT, 1000, 50);
     }
 
-    // Get Style from string
-    //** 4 example "action:" --> ACTION; "abracadabra"--> ERROR
-    //** In: none
-    //** Out: none
-    public Style GetStyle(String S) {
-        switch (S) {
-            case ("action:"):
-                return Style.ACTION;
-            case ("from:"):
-                return Style.FROM;
-            case ("to:"):
-                return Style.TO;
-            case ("buffer:"):
-                return Style.BUFFER;
-            default:
-                return Style.ERROR;
-        }
 
-    }
     public Integer getInteger(HashMap<String, String> parameters, String token)
     {
         if (parameters == null || token == null){
@@ -169,63 +151,7 @@ public class Config {
             this.data.Output = getString(params, Grammar.to.word);
             this.data.Buffer = getInteger(params, Grammar.buffer.word);
             this.data.readBuffer = getInteger(params, Grammar.read_buffer.word);
-            //int i = 0;
-            /*File file = new File(this.FileName);
-            Scanner input = new Scanner(file);
-            input.useDelimiter(" |\\n");
-            String s = input.next();
-            //!!
-            while (true) { // we have break when we read all file, exception otherwise
 
-                while (s.equals("\n"))
-                    s = input.next();
-
-                Style style = GetStyle(s);
-                // only 3 steps
-                // const exp required in switch
-                if (style == Style.ACTION) {
-                    s = input.next();
-                    if (s.equals(actions[1]))
-                        this.data.current = Action.DECOMPRESS;
-                    else
-                        this.data.current = Action.COMPRESS;
-                } else if (style == Style.FROM) {
-                    s = input.next();
-                    this.data.Input = s;
-                } else if (style == Style.TO) {
-                    s = input.next();
-                    this.data.Output = s;
-                } else if (style == Style.BUFFER) {
-                    s = input.next();
-                    this.data.Buffer = Integer.valueOf(s);
-                } else {
-                    System.err.println("Wrong algorithm");
-                }
-                /*switch (style) {
-                    case (Style.ACTION): // type of action decompress/compress
-                        s = input.next();
-                        if (s.equals(actions[0]))
-                            this.data.current = Action.DECOMPRESS;
-                        else
-                            this.data.current = Action.COMPRESS;
-                        break;
-                    case (1): //input file
-                        s = input.next();
-                        this.data.Input = s;
-                        break;
-                    case (2): //output file
-                        s = input.next();
-                        this.data.Output = s;
-                        break;
-                    default: // someone changed i
-                        System.err.println("Wrong algorithm");
-                        break;
-                }
-                if (input.hasNext())
-                    s = input.next();
-                else
-                    break;
-            }*/
 
     }
 

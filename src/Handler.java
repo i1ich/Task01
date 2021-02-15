@@ -82,18 +82,7 @@ public class Handler {
         /**/
         return Out;
     }
-    String GetString2() {
-        try {
-            File file = new File(this.FileName);
-            Scanner input = new Scanner(file);
-            input.useDelimiter("\\Z");
-            String s = input.next();
-            return s;
-        } catch (FileNotFoundException e) {
-            System.err.println("File Not Found");
-        }
-        return "";
-    }
+
     // Print string to file
     //**
     //** In: String s
